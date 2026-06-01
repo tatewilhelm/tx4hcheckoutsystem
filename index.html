@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Equipment Checkout</h1>
+      <span class="subtitle">Media Production Assets</span>
+    </div>
+    <div class="header-stats" id="headerStats"></div>
+  </header>
+
+  <main>
+
+    <section class="section" id="checkedOutSection">
+      <div class="section-header">
+        <h2>Currently Checked Out</h2>
+        <span class="count-badge" id="checkedOutCount" style="display:none">0</span>
+      </div>
+      <div class="checked-out-grid" id="checkedOutGrid">
+        <div class="empty-state" id="checkedOutEmpty">
+          <div class="empty-icon">&#10003;</div>
+          <p>All equipment is checked in</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Equipment</button>
+      <button class="filter-btn" data-filter="SD Card">SD Cards</button>
+      <button class="filter-btn" data-filter="Gimbal Rig">Gimbal Rigs</button>
+      <button class="filter-btn" data-filter="Tripod Setup">Tripod Setups</button>
+      <button class="filter-btn" data-filter="Microphone Set">Microphone Sets</button>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Available Equipment</h2>
+        <span class="count-badge available-badge" id="availableCount">0</span>
+      </div>
+      <div class="available-grid" id="availableGrid"></div>
+    </section>
+
+  </main>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Check Out Equipment</h3>
+        <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-equipment" id="modalEquipment"></div>
+        <div class="form-group">
+          <label for="nameInput">Your Name</label>
+          <input type="text" id="nameInput" placeholder="Enter your name" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="locationInput">Location / Project</label>
+          <input type="text" id="locationInput" placeholder="e.g. Studio A, Field Shoot, Edit Bay" autocomplete="off">
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+          <button class="btn btn-primary" id="confirmBtn">Check Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
